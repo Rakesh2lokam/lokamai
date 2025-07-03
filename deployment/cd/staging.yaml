@@ -97,7 +97,7 @@ steps:
         --csv=tests/load_test/.results/results \
         --html=tests/load_test/.results/report.html
     env:
-      - 'PATH=/usr/local/bin:/usr/bin:~/.local/bin'
+      - "PATH=/usr/local/bin:/usr/bin:~/.local/bin"
 
   # Export Load Test Results to GCS
   - name: gcr.io/cloud-builders/gcloud
@@ -145,7 +145,7 @@ substitutions:
   _STAGING_PROJECT_ID: YOUR_STAGING_PROJECT_ID
   _REGION: us-west1
 
-logsBucket: gs://${PROJECT_ID}-my-awesome-agent-logs-data/build-logs
+logsBucket: gs://${PROJECT_ID}-lokamai-logs-data/build-logs
 options:
   substitutionOption: ALLOW_LOOSE
   defaultLogsBucketBehavior: REGIONAL_USER_OWNED_BUCKET
