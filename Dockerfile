@@ -61,3 +61,5 @@ RUN uv pip uninstall --system pip setuptools wheel && \
 # -- End of pip removal --
 
 WORKDIR /deps/backend
+
+CMD ["uvicorn", "src.agent.app:app", "--host", "0.0.0.0", "--port", "8080"]
