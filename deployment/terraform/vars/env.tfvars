@@ -17,4 +17,4 @@ host_connection_name = "lokamai"
 repository_name = "Rakesh2lokam-lokamai"
 
 # The Google Cloud region you will use to deploy the infrastructure
-region = "us-east1"
+region = "us-west2"
