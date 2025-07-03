@@ -87,3 +87,17 @@ resource "google_service_account_iam_member" "cicd_run_invoker_account_user" {
   member             = "serviceAccount:${resource.google_service_account.cicd_runner_sa.email}"
   depends_on         = [resource.google_project_service.cicd_services, resource.google_project_service.shared_services]
 }
+
+# Grant Cloud Run service account Cloud SQL Client role
+resource "google_project_iam_member" "cloud_run_app_sa_cloudsql_client" {
+  for_each = local.deploy_project_ids
+
+  project = local.deploy_project_ids[each.key]
+  role    = "roles/cloudsql.client"
+  member  = "serviceAccount:${google_service_account.cloud_run_app_sa[each.key].email}"
+
+  depends_on = [
+    resource.google_project_service.cicd_services,
+    resource.google_project_service.shared_services
+  ]
+}

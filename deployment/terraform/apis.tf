@@ -38,3 +38,17 @@ resource "google_project_service" "cicd_cloud_resource_manager_api" {
   service            = "cloudresourcemanager.googleapis.com"
   disable_on_destroy = false
 }
+
+# Enable Cloud SQL Admin API for the staging project
+resource "google_project_service" "staging_cloud_sql_admin_api" {
+  project            = var.staging_project_id
+  service            = "sqladmin.googleapis.com"
+  disable_on_destroy = false
+}
+
+# (Optional) Enable Cloud SQL Admin API for the prod project
+resource "google_project_service" "prod_cloud_sql_admin_api" {
+  project            = var.prod_project_id
+  service            = "sqladmin.googleapis.com"
+  disable_on_destroy = false
+}
