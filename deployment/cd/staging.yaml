@@ -44,7 +44,7 @@ steps:
       - "--project"
       - "${_STAGING_PROJECT_ID}"
       - "--min-instances"
-      - "0"
+      - "1"
       - "--no-cpu-throttling"
       - "--cpu"
       - "1"
