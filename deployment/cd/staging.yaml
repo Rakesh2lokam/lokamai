@@ -67,7 +67,7 @@ steps:
     args:
       - "-c"
       - |
-        echo $(gcloud run services describe my-awesome-agent \
+        echo $(gcloud run services describe lokamai \
         --region ${_REGION} --project ${_STAGING_PROJECT_ID} --format="value(status.url)") > staging_url.txt
 
   # Fetch ID Token
