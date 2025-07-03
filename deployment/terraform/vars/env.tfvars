@@ -1,5 +1,5 @@
 # Project name used for resource naming
-project_name = "my-awesome-agent"
+project_name = "lokamai"
 
 # Your Production Google Cloud project id
 prod_project_id = "nomadic-botany-463322-s1"
