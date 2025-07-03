@@ -2,7 +2,7 @@
 project_name = "lokamai"
 
 # Your Production Google Cloud project id
-prod_project_id = "lokamai-prod"
+prod_project_id = "lokamailabs-prod"
 
 # Your Staging / Test Google Cloud project id
 staging_project_id = "nomadic-botany-463322-s1"
@@ -17,4 +17,4 @@ host_connection_name = "lokamai"
 repository_name = "Rakesh2lokam-lokamai"
 
 # The Google Cloud region you will use to deploy the infrastructure
-region = "us-west1"
+region = "us-west2"
