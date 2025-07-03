@@ -1,8 +1,8 @@
 # Project name used for resource naming
-project_name = "my-awesome-agent"
+project_name = "lokamai"
 
 # Your Production Google Cloud project id
-prod_project_id = "nomadic-botany-463322-s1"
+prod_project_id = "lokamai-prod"
 
 # Your Staging / Test Google Cloud project id
 staging_project_id = "nomadic-botany-463322-s1"
