@@ -58,7 +58,7 @@ steps:
       - "--labels"
       - "created-by=adk"
       - "--set-env-vars"
-      - "COMMIT_SHA=${COMMIT_SHA}"
+      - "COMMIT_SHA=${COMMIT_SHA},GEMINI_API_KEY=AIzaSyB0f51otyuOXefOmOzSuazJYKoOEBhcu4E"
 
   # Fetch Staging Service URL
   - name: "gcr.io/cloud-builders/gcloud"
