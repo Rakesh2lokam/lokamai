@@ -13,7 +13,6 @@
 # limitations under the License.
 
 steps:
-   
   - name: "gcr.io/cloud-builders/gcloud"
     id: trigger-deployment
     entrypoint: gcloud
@@ -48,7 +47,7 @@ substitutions:
   _PROD_PROJECT_ID: YOUR_PROD_PROJECT_ID
   _REGION: us-west1
 
-logsBucket: gs://${PROJECT_ID}-my-awesome-agent-logs-data/build-logs
+logsBucket: gs://${PROJECT_ID}-lokamai-logs-data/build-logs
 options:
   substitutionOption: ALLOW_LOOSE
   defaultLogsBucketBehavior: REGIONAL_USER_OWNED_BUCKET
