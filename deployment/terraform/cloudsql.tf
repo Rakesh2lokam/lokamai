@@ -1,6 +1,6 @@
 resource "google_sql_database_instance" "staging" {
   name             = "lokamai-staging-db"
-  database_version = "POSTGRES_16"
+  database_version = "POSTGRES_17"
   region           = var.region
   project          = var.staging_project_id
 
