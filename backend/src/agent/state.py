@@ -20,6 +20,16 @@ class OverallState(TypedDict):
     research_loop_count: int
     reasoning_model: str
 
+class ResearchState(TypedDict):
+    is_sufficient: bool
+    knowledge_gap: str
+    follow_up_queries: Annotated[list, operator.add]
+    research_loop_count: int
+    number_of_ran_queries: int
+    sources_gathered: Annotated[list, operator.add]
+    initial_search_query_count: int
+    max_research_loops: int
+    reasoning_model: str
 
 class ReflectionState(TypedDict):
     is_sufficient: bool
