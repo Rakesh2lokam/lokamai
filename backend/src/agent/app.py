@@ -2,6 +2,7 @@
 import pathlib
 from fastapi import FastAPI, Response
 from fastapi.staticfiles import StaticFiles
+from fastapi.middleware.cors import CORSMiddleware
 
 # Define the FastAPI app To trigger deployemt
 app = FastAPI()
@@ -18,6 +19,8 @@ def create_frontend_router(build_dir="../frontend/dist"):
     """
     build_path = pathlib.Path(__file__).parent.parent.parent / build_dir
 
+    print(f"DEBUG: Resolved frontend build path: {build_path}")
+    print(f"DEBUG: index.html exists: {(build_path / 'index.html').is_file()}")
     if not build_path.is_dir() or not (build_path / "index.html").is_file():
         print(
             f"WARN: Frontend build directory not found or incomplete at {build_path}. Serving frontend will likely fail."
@@ -36,6 +39,13 @@ def create_frontend_router(build_dir="../frontend/dist"):
 
     return StaticFiles(directory=build_path, html=True)
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["https://lokamai-374429177024.us-west2.run.app"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Mount the frontend under /app to not conflict with the LangGraph API routes
 app.mount(
