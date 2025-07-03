@@ -58,7 +58,7 @@ steps:
       - "--labels"
       - "created-by=adk"
       - "--set-env-vars"
-      - "COMMIT_SHA=${COMMIT_SHA},GEMINI_API_KEY=AIzaSyB0f51otyuOXefOmOzSuazJYKoOEBhcu4E,DATABASE_URI=postgres://lokamaiuser:lokamaiuser@34.94.177.174:5432/lokamai-staging-db"
+      - "COMMIT_SHA=${COMMIT_SHA},GEMINI_API_KEY=AIzaSyB0f51otyuOXefOmOzSuazJYKoOEBhcu4E,DATABASE_URI=postgres://lokamaiuser:lokamaiuser@34.94.177.174:5432/lokamai-staging-db,REDIS_URI=redis://MEMORYSTORE_HOST:PORT"
 
   # Fetch Staging Service URL
   - name: "gcr.io/cloud-builders/gcloud"
